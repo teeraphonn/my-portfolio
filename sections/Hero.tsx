@@ -196,7 +196,7 @@ export function Hero() {
               ดูผลงานของผม <ArrowRight className="h-4 w-4" />
             </Button>
             
-            <a href="/resume.pdf" download="Teeraphon_Resume.pdf" className="inline-block">
+            <a href="/resume.pdf?v=2" download="Teeraphon_Resume.pdf" className="inline-block">
               <Button
                 variant="outline"
                 size="lg"
