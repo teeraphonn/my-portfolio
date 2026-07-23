@@ -101,10 +101,10 @@ export function About() {
               </h3>
               
               <p className="text-muted-foreground font-sans leading-relaxed mb-4 text-sm md:text-base">
-                ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความหลงใหลในการพัฒนาซอฟต์แวร์แบบ <strong className="text-foreground">Full Stack</strong> 
+                ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความต้องศึกษาการพัฒนาระบบ <strong className="text-foreground">Full Stack</strong> 
                 และการวิเคราะห์ออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) 
-                ผมชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) 
-                และการสร้างแอปพลิเคชันที่คลีน ขยายต่อได้ง่าย และแก้ไขปัญหาตอบโจทย์ธุรกิจได้จริง
+                ผมมีความชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) 
+                และการสร้างแอปพลิเคชัน และแก้ไขปัญหาตอบโจทย์ธุรกิจได้จริง
               </p>
 
               <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base">
