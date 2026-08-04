@@ -12,7 +12,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = React.useState(false);
 
   const navLinks = [
-    { name: "หน้าแรก", id: "home" },
     { name: "เกี่ยวกับฉัน", id: "about" },
     { name: "ประวัติการศึกษา", id: "education" },
     { name: "ใบรับรอง", id: "certifications" },
