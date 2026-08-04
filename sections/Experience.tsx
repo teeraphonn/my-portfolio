@@ -7,28 +7,39 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Experience() {
   const academicProjects = [
     {
-      title: "ระบบติดตามการดำเนินงานตามประเด็นยุทธศาสตร์",
-      subtitle: "วิชาการวิเคราะห์และออกแบบระบบ (System Analysis and Design - Term Project)",
+      title: "Strategic Performance Tracking System (Full-Stack Web Application)",
+      subtitle: "Computer Science Project • Capstone Project",
       institution: "มหาวิทยาลัยราชภัฏบุรีรัมย์",
-      period: "โครงการภาคเรียน",
+      period: "Capstone Project",
       responsibilities: [
-        "ออกแบบแผนภาพบริบท (Context Diagram) และกระแสข้อมูล (DFD Level 0-2)",
-        "ออกแบบฐานข้อมูลความสัมพันธ์ด้วยแผนภาพ ERD (Entity-Relationship Diagram)",
-        "วางโครงสร้างและพัฒนาฐานข้อมูลเชิงสัมพันธ์ MySQL",
-        "ออกแบบและพัฒนาหน้าเว็บไซต์ด้วยหลักการ Responsive UI",
-        "เทคโนโลยีที่ใช้หลัก: HTML, CSS, JavaScript, MySQL",
+        "Responsibilities: Developed frontend dashboards, backend RESTful APIs, and JWT/RBAC authentication using React, Node.js, Express.js, Prisma ORM, MySQL, Tailwind CSS, and Chart.js.",
       ],
     },
     {
-      title: "ระบบจัดการสมาชิก (Member Management System)",
-      subtitle: "วิชาการพัฒนาแอปพลิเคชันอินเทอร์เน็ต (Internet Application Development)",
+      title: "Strategic Issue Implementation Monitoring System for Buriram Rajabhat University",
+      subtitle: "System Analysis and Design • Term Project",
       institution: "มหาวิทยาลัยราชภัฏบุรีรัมย์",
-      period: "โครงการภาคเรียน",
+      period: "Term Project",
       responsibilities: [
-        "ออกแบบและพัฒนาเว็บเซอร์วิส RESTful API สำหรับการทำงานฐานข้อมูล",
-        "พัฒนาส่วนเชื่อมต่อ CRUD สำหรับจัดการข้อมูลผู้ใช้และสมาชิก",
-        "สร้างระบบยืนยันตัวตนและความปลอดภัยการเข้าสู่ระบบ (Authentication)",
-        "เทคโนโลยีที่ใช้หลัก: Node.js, Express, MySQL",
+        "Conducted system analysis, designed Context Diagrams, DFD, Flowcharts, Decomposition Diagrams, and ERD, and translated functional requirements into system workflows.",
+      ],
+    },
+    {
+      title: "Member Management System",
+      subtitle: "Internet Application Development • Term Project",
+      institution: "มหาวิทยาลัยราชภัฏบุรีรัมย์",
+      period: "Term Project",
+      responsibilities: [
+        "Developed a RESTful API for member management using Node.js, Express.js, and MySQL, implementing CRUD functionality and database integration for efficient data management.",
+      ],
+    },
+    {
+      title: "Image Upload Mobile & Web App Concept",
+      subtitle: "Mobile Application Development • Term Project",
+      institution: "มหาวิทยาลัยราชภัฏบุรีรัมย์",
+      period: "Term Project",
+      responsibilities: [
+        "Designed end-to-end UX/UI workflows and interactive prototypes for both mobile and web platforms using Figma.",
       ],
     },
   ];
@@ -117,7 +128,7 @@ export function Experience() {
               variants={containerVariants}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               className="space-y-6"
             >
               {academicProjects.map((proj, idx) => (
@@ -164,7 +175,7 @@ export function Experience() {
               variants={containerVariants}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true }}
               className="space-y-6"
             >
               {internships.map((intern, idx) => (

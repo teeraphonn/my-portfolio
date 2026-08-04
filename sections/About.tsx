@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { User, Mail, Phone, MapPin, Briefcase } from "lucide-react";
+import { User, Mail, Phone, MapPin, Briefcase, Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function About() {
   const infoItems = [
@@ -101,17 +102,22 @@ export function About() {
               </h3>
               
               <p className="text-muted-foreground font-sans leading-relaxed mb-4 text-sm md:text-base">
-                ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความต้องศึกษาการพัฒนาระบบ <strong className="text-foreground">Full Stack</strong> 
-                และการวิเคราะห์ออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) 
-                ผมมีความชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) 
-                และการสร้างแอปพลิเคชัน และแก้ไขปัญหาตอบโจทย์ธุรกิจได้จริง
+                ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความสนใจในการพัฒนาซอฟต์แวร์แบบ <strong className="text-foreground">Full Stack</strong> และการวิเคราะห์และออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) ผมชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) และการสร้างแอปพลิเคชันที่คลีน และมีความตั้งใจที่จะเรียนรู้เทคโนโลยีและหาความรู้สิ่งใหม่ๆเสมอ
               </p>
 
-              <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base">
-                ผมมีความมุ่งมั่นและต้องการ <strong className="text-[#C1121F]">ฝึกงาน (Internship) ใน 2 บทบาทหลัก</strong> คือ 
-                ตำแหน่ง <strong className="text-foreground">Full Stack Developer</strong> หรือนักวิเคราะห์ระบบ <strong className="text-foreground">System Analyst (SA)</strong> 
-                เพื่อเรียนรู้ทักษะการทำงานจริงอย่างเป็นระบบและนำความรู้มาช่วยสร้างคุณค่าให้กับทีมและองค์กร
+              <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base mb-6">
+                ผมมีความต้องการ <strong className="text-[#C1121F]">ฝึกงาน (Internship) ใน 2 บทบาทหลัก</strong> คือ ตำแหน่ง <strong className="text-foreground">Full Stack Developer</strong> หรือนักวิเคราะห์ระบบ <strong className="text-foreground">System Analyst (SA)</strong> หรือ ตำแหน่งด้าน Tech อื่นๆ ตามความเหมาะสมกับประสบการณ์ส่วนตัว เพื่อเรียนรู้ทักษะการทำงานจริงอย่างเป็นระบบและนำความรู้มาช่วยสร้างคุณค่าให้กับทีมและองค์กร
               </p>
+              <div className="pt-2">
+                <a href="/Teeraphon_Resume.pdf" download="Teeraphon_Resume.pdf" className="inline-block">
+                  <Button
+                    size="lg"
+                    className="bg-[#C1121F] hover:bg-[#780000] text-white rounded-full px-6 font-medium shadow-md shadow-[#C1121F]/20 hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
+                  >
+                    ดาวน์โหลด Resume <Download className="h-4.5 w-4.5" />
+                  </Button>
+                </a>
+              </div>
             </motion.div>
 
             <motion.div

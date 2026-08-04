@@ -7,32 +7,39 @@ import { Card, CardContent } from "@/components/ui/card";
 export function Skills() {
   const skillCategories = [
     {
-      title: "Programming (ภาษาเขียนโปรแกรม)",
+      title: "Developer Skills",
       icon: <Code2 className="h-6 w-6 text-[#C1121F]" />,
       skills: [
-        { name: "JavaScript", level: 85 },
-        { name: "TypeScript", level: 80 },
-        { name: "Node.js", level: 75 },
-        { name: "HTML / CSS", level: 90 },
-        { name: "Python", level: 70 },
+        "C",
+        "Python",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js",
+        "Tailwind CSS",
       ],
     },
     {
-      title: "Database (ฐานข้อมูล)",
+      title: "Database Management",
       icon: <Database className="h-6 w-6 text-[#C1121F]" />,
       skills: [
-        { name: "MySQL", level: 80 },
-        { name: "SQL", level: 80 },
+        "SQL",
+        "MySQL",
+        "Supabase",
       ],
     },
     {
-      title: "Tools & Technologies (เครื่องมือ)",
+      title: "Design & Development Tools",
       icon: <Wrench className="h-6 w-6 text-[#C1121F]" />,
       skills: [
-        { name: "VS Code / Cursor / Antigravity IDE", level: 90 },
-        { name: "Claude AI / Generative AI", level: 88 },
-        { name: "Git / GitHub", level: 80 },
-        { name: "Figma (UI/UX Design)", level: 75 },
+        "Figma",
+        "VS Code",
+        "Cursor",
+        "Postman",
+        "Antigravity",
+        "Claude",
+        "Github",
       ],
     },
   ];
@@ -103,7 +110,7 @@ export function Skills() {
                         transition={{ duration: 0.3, delay: skillIdx * 0.05 }}
                         className="text-xs md:text-sm font-semibold px-4 py-2.5 rounded-xl bg-background border border-border text-foreground/85 hover:text-foreground hover:border-[#C1121F] hover:bg-[#C1121F]/5 transition-all duration-300 font-heading cursor-default shadow-sm"
                       >
-                        {skill.name}
+                        {skill}
                       </motion.span>
                     ))}
                   </div>

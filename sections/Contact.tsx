@@ -2,10 +2,21 @@
 
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function Contact() {
+  const [formState, setFormState] = React.useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSuccess, setIsSuccess] = React.useState(false);
+
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5 text-[#C1121F]" />,
@@ -41,12 +52,34 @@ export function Contact() {
     },
   ];
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formState.name || !formState.email || !formState.message) return;
+
+    setIsSubmitting(true);
+    
+    // Simulate API request delay
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      setFormState({ name: "", email: "", message: "" });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSuccess(false), 5000);
+    }, 1800);
+  };
+
   return (
     <section id="contact" className="py-24 bg-card relative overflow-hidden">
       {/* Background Soft Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#C1121F]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-80 h-80 bg-[#C1121F]/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="container max-w-4xl mx-auto px-4 md:px-8 relative z-10">
+      <div className="container max-w-6xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="flex flex-col items-center mb-16 text-center">
@@ -65,73 +98,81 @@ export function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-muted-foreground max-w-lg font-sans text-center"
+            className="text-muted-foreground max-w-lg font-sans"
           >
-            สามารถส่งอีเมล โทรติดต่อ หรือทักทายผ่านช่องทางโซเชียลมีเดียได้เลยครับ
+            ยินดีรับข้อมูลติดต่อกลับ หรือข้อความเพื่อพูดคุยแลกเปลี่ยนและร่วมงานกัน
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl mx-auto"
-        >
-          <Card className="glass border-border/80 bg-background/50 overflow-hidden relative">
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#C1121F] to-[#780000]" />
-            <CardContent className="p-8 md:p-10 flex flex-col items-center text-center space-y-8">
-              
-              <div className="w-full space-y-6 text-left max-w-md mx-auto">
-                {contactInfo.map((info, idx) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-xl border border-border/40 bg-background/30 hover:border-[#C1121F]/30 transition-all duration-300">
-                    <div className="p-3 rounded-xl bg-[#C1121F]/10 border border-[#C1121F]/10 flex items-center justify-center shrink-0 text-[#C1121F]">
-                      {info.icon}
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <span className="text-xs text-muted-foreground font-sans font-medium mb-0.5">
-                        {info.label}
-                      </span>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className="text-foreground font-sans font-semibold hover:text-[#C1121F] transition-colors duration-300 break-all text-sm md:text-base"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <span className="text-foreground font-sans font-semibold break-words text-sm md:text-base">
-                          {info.value}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+        <div className="max-w-2xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <Card className="glass border-border/80 bg-background/50 relative overflow-hidden shadow-xl">
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#C1121F] to-[#780000]" />
+              <CardContent className="p-8 md:p-12 space-y-8 text-center md:text-left">
+                <h3 className="text-2xl font-bold font-heading text-foreground mb-4 text-center">
+                  ช่องทางการติดต่อตรง
+                </h3>
+                
+                <p className="text-muted-foreground font-sans leading-relaxed text-center">
+                  หากคุณมีข้อเสนอแนะ โครงการที่ต้องการพัฒนา หรือสนใจร่วมงานด้าน Full Stack พัฒนาเว็บแอปพลิเคชัน 
+                  สามารถติดต่อผ่านอีเมล เบอร์โทรศัพท์ หรือโซเชียลมีเดียได้ทันทีครับ
+                </p>
 
-              <div className="w-full pt-6 border-t border-border/50 flex flex-col items-center">
-                <h4 className="text-xs font-bold text-foreground font-heading uppercase tracking-wider mb-4">
-                  โซเชียลมีเดีย
-                </h4>
-                <div className="flex gap-4">
-                  {socialLinks.map((social, idx) => (
-                    <a
-                      key={idx}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`p-3 rounded-full border border-border bg-background text-muted-foreground transition-all duration-300 hover:scale-110 cursor-pointer ${social.color}`}
-                      aria-label={social.label}
-                    >
-                      {social.icon}
-                    </a>
+                <div className="space-y-6 pt-2">
+                  {contactInfo.map((info, idx) => (
+                    <div key={idx} className="flex items-center gap-4 justify-center md:justify-start">
+                      <div className="p-3 rounded-xl bg-[#C1121F]/10 border border-[#C1121F]/10 flex items-center justify-center shrink-0 text-[#C1121F]">
+                        {info.icon}
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-xs text-muted-foreground font-sans font-medium mb-0.5">
+                          {info.label}
+                        </span>
+                        {info.href ? (
+                          <a
+                            href={info.href}
+                            className="text-foreground font-sans font-semibold hover:text-[#C1121F] transition-colors duration-300 break-all"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <span className="text-foreground font-sans font-semibold break-words">
+                            {info.value}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </div>
 
-            </CardContent>
-          </Card>
-        </motion.div>
+                <div className="pt-8 border-t border-border/50 text-center">
+                  <h4 className="text-xs font-bold text-foreground font-heading uppercase tracking-wider mb-4">
+                    โซเชียลมีเดีย
+                  </h4>
+                  <div className="flex justify-center gap-4">
+                    {socialLinks.map((social, idx) => (
+                      <a
+                        key={idx}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-3 rounded-full border border-border bg-background text-muted-foreground transition-all duration-300 hover:scale-110 cursor-pointer ${social.color}`}
+                        aria-label={social.label}
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
 
       </div>
     </section>
