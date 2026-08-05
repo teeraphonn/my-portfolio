@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, Wrench } from "lucide-react";
+import { Code2, Database, Wrench, CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function Skills() {
@@ -27,6 +27,17 @@ export function Skills() {
         "SQL",
         "MySQL",
         "Supabase",
+      ],
+    },
+    {
+      title: "QA & System Analysis",
+      icon: <CheckCircle2 className="h-6 w-6 text-[#C1121F]" />,
+      skills: [
+        "SQA / Software Testing",
+        "Unit Testing",
+        "API Testing",
+        "System Diagram / Flowchart",
+        "Requirement Gathering",
       ],
     },
     {
@@ -69,12 +80,12 @@ export function Skills() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-muted-foreground max-w-lg font-sans"
           >
-            ความชำนาญการในการเขียนโปรแกรม ระบบจัดการฐานข้อมูล และซอฟต์แวร์เครื่องมือต่างๆ
+            ความชำนาญการในการเขียนโปรแกรม ระบบจัดการฐานข้อมูล การประกันคุณภาพซอฟต์แวร์ และเครื่องมือต่างๆ
           </motion.p>
         </div>
 
         {/* Skills Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, catIdx) => (
             <motion.div
               key={catIdx}

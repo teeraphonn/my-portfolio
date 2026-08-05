@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { User, Mail, Phone, MapPin, Briefcase, Download } from "lucide-react";
+import { User, Mail, Phone, MapPin, Briefcase } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -16,7 +16,7 @@ export function About() {
     {
       icon: <Briefcase className="h-5 w-5 text-[#C1121F]" />,
       label: "ตำแหน่งที่ต้องการฝึกงาน",
-      value: "Full Stack Developer / System Analyst (SA)",
+      value: "Full Stack Developer / System Analyst (SA) / SQA",
     },
     {
       icon: <MapPin className="h-5 w-5 text-[#C1121F]" />,
@@ -98,26 +98,16 @@ export function About() {
               transition={{ duration: 0.8 }}
             >
               <h3 className="text-xl md:text-2xl font-bold font-heading mb-5 text-foreground leading-snug">
-                นักศึกษาวิทยาการคอมพิวเตอร์ที่ต้องการฝึกงานตำแหน่ง <span className="text-[#C1121F]">Full Stack Developer</span> และ <span className="text-[#C1121F]">System Analyst (SA)</span>
+                นักศึกษาวิทยาการคอมพิวเตอร์ที่ต้องการฝึกงานตำแหน่ง <span className="text-[#C1121F]">Full Stack Developer</span>, <span className="text-[#C1121F]">System Analyst (SA)</span> และ <span className="text-[#C1121F]">Software Quality Assurance (SQA)</span>
               </h3>
               
               <p className="text-muted-foreground font-sans leading-relaxed mb-4 text-sm md:text-base">
-                ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความสนใจในการพัฒนาซอฟต์แวร์แบบ <strong className="text-foreground">Full Stack</strong> และการวิเคราะห์และออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) ผมชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) และการสร้างแอปพลิเคชันที่คลีน และมีความตั้งใจที่จะเรียนรู้เทคโนโลยีและหาความรู้สิ่งใหม่ๆเสมอ
+                ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความสนใจในการพัฒนาซอฟต์แวร์แบบ <strong className="text-foreground">Full Stack</strong>, การวิเคราะห์และออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) รวมถึงการประกันคุณภาพซอฟต์แวร์ (<strong className="text-foreground">Software Quality Assurance / Testing</strong>) ผมชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) การทดสอบซอฟต์แวร์และเขียน Unit test เพื่อตรวจสอบความถูกต้องของระบบ และการสร้างแอปพลิเคชันที่คลีน และมีความตั้งใจที่จะเรียนรู้เทคโนโลยีและหาความรู้สิ่งใหม่ๆเสมอ
               </p>
 
-              <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base mb-6">
-                ผมมีความต้องการ <strong className="text-[#C1121F]">ฝึกงาน (Internship) ใน 2 บทบาทหลัก</strong> คือ ตำแหน่ง <strong className="text-foreground">Full Stack Developer</strong> หรือนักวิเคราะห์ระบบ <strong className="text-foreground">System Analyst (SA)</strong> หรือ ตำแหน่งด้าน Tech อื่นๆ ตามความเหมาะสมกับประสบการณ์ส่วนตัว เพื่อเรียนรู้ทักษะการทำงานจริงอย่างเป็นระบบและนำความรู้มาช่วยสร้างคุณค่าให้กับทีมและองค์กร
+              <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base">
+                ผมมีความต้องการ <strong className="text-[#C1121F]">ฝึกงาน (Internship) ใน 3 บทบาทหลัก</strong> คือ ตำแหน่ง <strong className="text-foreground">Full Stack Developer</strong>, นักวิเคราะห์ระบบ <strong className="text-foreground">System Analyst (SA)</strong> หรือ <strong className="text-foreground">Software Quality Assurance (SQA)</strong> หรือ ตำแหน่งด้าน Tech อื่นๆ ตามความเหมาะสมกับประสบการณ์ส่วนตัว เพื่อเรียนรู้ทักษะการทำงานจริงอย่างเป็นระบบและนำความรู้มาช่วยสร้างคุณค่าให้กับทีมและองค์กร
               </p>
-              <div className="pt-2">
-                <a href="/Teeraphon_Resume.pdf" download="Teeraphon_Resume.pdf" className="inline-block">
-                  <Button
-                    size="lg"
-                    className="bg-[#C1121F] hover:bg-[#780000] text-white rounded-full px-6 font-medium shadow-md shadow-[#C1121F]/20 hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
-                  >
-                    ดาวน์โหลด Resume <Download className="h-4.5 w-4.5" />
-                  </Button>
-                </a>
-              </div>
             </motion.div>
 
             <motion.div

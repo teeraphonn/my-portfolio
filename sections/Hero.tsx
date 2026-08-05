@@ -3,12 +3,13 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Send, Mail, Phone } from "lucide-react";
+import { ArrowRight, Send, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const roles = [
   "Full Stack Developer (ฝึกงาน)",
   "System Analyst / SA (ฝึกงาน)",
+  "Software Quality Assurance / SQA (ฝึกงาน)",
   "นักศึกษาวิทยาการคอมพิวเตอร์",
 ];
 
@@ -160,31 +161,7 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left"
         >
-          <motion.span
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-[#C1121F] font-semibold text-lg tracking-wider mb-2 font-heading"
-          >
-            สวัสดีครับ, ผมชื่อ
-          </motion.span>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight mb-4 text-foreground">
-            ธีรพล เปลี่ยนรัมย์
-          </h1>
 
-          <div className="h-10 md:h-12 flex items-center justify-center lg:justify-start mb-6">
-            <span className="text-xl md:text-2xl font-medium text-foreground/80 font-heading">
-              เป็น
-            </span>
-            <span className="text-xl md:text-2xl font-bold text-[#C1121F] ml-2 border-r-2 border-[#C1121F] pr-1 animate-pulse font-heading">
-              {currentRole}
-            </span>
-          </div>
-
-          <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed font-sans">
-            มีความหลงใหลในการพัฒนาเว็บแอปพลิเคชันแบบ <strong className="text-foreground">Full Stack</strong> และการวิเคราะห์ออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) <strong className="text-[#C1121F]">กำลังมองหาโอกาสฝึกงาน (Internship) ในตำแหน่ง Full Stack Developer หรือ System Analyst (SA)</strong>
-          </p>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
@@ -196,21 +173,11 @@ export function Hero() {
               ดูผลงานของผม <ArrowRight className="h-4 w-4" />
             </Button>
             
-            <a href="/resume.pdf?v=2" download="Teeraphon_Resume.pdf" className="inline-block">
-              <Button
-                variant="outline"
-                size="lg"
-                className="rounded-full border-border hover:bg-primary/5 hover:border-[#C1121F] text-foreground hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
-              >
-                ดาวน์โหลด Resume <Download className="h-4 w-4" />
-              </Button>
-            </a>
-
             <Button
               onClick={() => scrollToSection("contact")}
-              variant="ghost"
+              variant="outline"
               size="lg"
-              className="rounded-full hover:bg-primary/10 text-foreground hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
+              className="rounded-full border-border hover:bg-primary/5 hover:border-[#C1121F] text-foreground hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
             >
               ติดต่อผม <Send className="h-4 w-4 text-[#C1121F]" />
             </Button>
