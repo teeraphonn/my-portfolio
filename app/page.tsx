@@ -60,6 +60,7 @@ export default function Home() {
 
       {/* Main Page Layout */}
       <main className="flex-1 w-full flex flex-col bg-background">
+        <Hero />
         <About />
         <Education />
         <Certifications />
