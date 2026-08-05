@@ -151,8 +151,6 @@ export function Hero() {
 
       {/* Glow Effect */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-[#C1121F]/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-[#780000]/10 rounded-full blur-[120px] pointer-events-none" />
-
       <div className="container max-w-7xl mx-auto px-4 md:px-8 z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Left Side: Info */}
         <motion.div
@@ -161,7 +159,10 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left"
         >
-
+          <h2 className="text-xl sm:text-2xl font-semibold text-[#C1121F] mb-4 h-8">
+            <span>{currentRole}</span>
+            <span className="animate-pulse">|</span>
+          </h2>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
