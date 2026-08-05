@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { User, Mail, Phone, MapPin, Briefcase } from "lucide-react";
+import { User, Mail, Phone, MapPin, Briefcase, Download } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -105,9 +105,25 @@ export function About() {
                 ผมเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความสนใจในการพัฒนาซอฟต์แวร์แบบ <strong className="text-foreground">Full Stack</strong>, การวิเคราะห์และออกแบบระบบ (<strong className="text-foreground">System Analysis & Design</strong>) รวมถึงการประกันคุณภาพซอฟต์แวร์ (<strong className="text-foreground">Software Quality Assurance / Testing</strong>) ผมชื่นชอบการออกแบบโครงสร้างฐานข้อมูล การร่างแผนภาพระบบ (System Diagram) การทดสอบซอฟต์แวร์และเขียน Unit test เพื่อตรวจสอบความถูกต้องของระบบ และการสร้างแอปพลิเคชันที่คลีน และมีความตั้งใจที่จะเรียนรู้เทคโนโลยีและหาความรู้สิ่งใหม่ๆเสมอ
               </p>
 
-              <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base">
+              <p className="text-muted-foreground font-sans leading-relaxed text-sm md:text-base mb-6">
                 ผมมีความต้องการ <strong className="text-[#C1121F]">ฝึกงาน (Internship) ใน 3 บทบาทหลัก</strong> คือ ตำแหน่ง <strong className="text-foreground">Full Stack Developer</strong>, นักวิเคราะห์ระบบ <strong className="text-foreground">System Analyst (SA)</strong> หรือ <strong className="text-foreground">Software Quality Assurance (SQA)</strong> หรือ ตำแหน่งด้าน Tech อื่นๆ ตามความเหมาะสมกับประสบการณ์ส่วนตัว เพื่อเรียนรู้ทักษะการทำงานจริงอย่างเป็นระบบและนำความรู้มาช่วยสร้างคุณค่าให้กับทีมและองค์กร
               </p>
+
+              <div className="pt-2">
+                <a
+                  href="/resume.pdf"
+                  download="Teeraphon_Plianram_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-[#C1121F] hover:bg-[#780000] text-white rounded-full px-6 font-medium shadow-md shadow-[#C1121F]/20 hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
+                  >
+                    <Download className="h-4 w-4" /> ดาวน์โหลด Resume (PDF)
+                  </Button>
+                </a>
+              </div>
             </motion.div>
 
             <motion.div

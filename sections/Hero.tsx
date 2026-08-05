@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Send, Mail, Phone } from "lucide-react";
+import { ArrowRight, Send, Mail, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const roles = [
@@ -165,10 +165,25 @@ export function Hero() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <a
+              href="/resume.pdf"
+              download="Teeraphon_Plianram_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-[#C1121F] hover:bg-[#780000] text-white rounded-full px-6 font-medium shadow-md shadow-[#C1121F]/20 hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
+              >
+                <Download className="h-4 w-4" /> ดาวน์โหลด Resume (PDF)
+              </Button>
+            </a>
+
             <Button
               onClick={() => scrollToSection("projects")}
+              variant="outline"
               size="lg"
-              className="bg-[#C1121F] hover:bg-[#780000] text-white rounded-full px-6 font-medium shadow-md shadow-[#C1121F]/20 hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
+              className="rounded-full border-border hover:bg-primary/5 hover:border-[#C1121F] text-foreground hover:scale-105 transition-all duration-300 gap-2 cursor-pointer"
             >
               ดูผลงานของผม <ArrowRight className="h-4 w-4" />
             </Button>
